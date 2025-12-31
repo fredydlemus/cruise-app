@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cruise-app-deployment
+  labels:
+    app: cruise-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cruise-app
+  template:
+    metadata:
+      labels: 
+        app: cruise-app
+      spec:
+        containers:
+          - name: cruise-app
+            image:
+            ports:
+              - containerPort: 3000
